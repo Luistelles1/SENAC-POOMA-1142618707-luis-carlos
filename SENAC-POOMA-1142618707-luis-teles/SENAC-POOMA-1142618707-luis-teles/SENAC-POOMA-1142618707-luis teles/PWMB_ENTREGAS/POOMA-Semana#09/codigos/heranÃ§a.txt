@@ -1,0 +1,53 @@
+class EntidadeEsportiva {
+    private String nome;
+    private String cidade;
+
+    public EntidadeEsportiva(String nome, String cidade) {
+        this.nome = nome;
+        this.cidade = cidade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+}
+
+class Equipe extends EntidadeEsportiva {
+    private List<Jogador> jogadores;
+
+    public Equipe(String nome, String cidade) {
+        super(nome, cidade);
+        jogadores = new ArrayList<>();
+    }
+
+    public void adicionarJogador(Jogador jogador) {
+        jogadores.add(jogador);
+    }
+
+    public List<Jogador> getJogadores() {
+        return jogadores;
+    }
+}
+
+class Jogador extends EntidadeEsportiva {
+    private String posicao;
+    private int numeroCamisa;
+
+    public Jogador(String nome, String cidade, String posicao, int numeroCamisa) {
+        super(nome, cidade);
+        this.posicao = posicao;
+        this.numeroCamisa = numeroCamisa;
+    }
+
+    public String getPosicao() {
+        return posicao;
+    }
+
+    public int getNumeroCamisa() {
+        return numeroCamisa;
+    }
+}
