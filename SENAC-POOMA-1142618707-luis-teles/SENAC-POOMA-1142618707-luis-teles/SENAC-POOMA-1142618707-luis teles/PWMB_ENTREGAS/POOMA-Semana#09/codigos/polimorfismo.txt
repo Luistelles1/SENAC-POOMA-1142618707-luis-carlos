@@ -1,0 +1,27 @@
+public class CampeonatoPaulista {
+    public static void main(String[] args) {
+        Equipe equipe1 = new Equipe("São Paulo FC", "São Paulo");
+        equipe1.adicionarJogador(new Jogador("Hernanes", "São Paulo", "Meia", 15));
+        equipe1.adicionarJogador(new Jogador("Lucas", "São Paulo", "Atacante", 7));
+
+        Equipe equipe2 = new Equipe("Corinthians", "São Paulo");
+        equipe2.adicionarJogador(new Jogador("Cássio", "São Paulo", "Goleiro", 12));
+        equipe2.adicionarJogador(new Jogador("Fábio Santos", "São Paulo", "Lateral", 6));
+
+        // Exibindo informações das equipes
+        exibirDetalhesEquipe(equipe1);
+        exibirDetalhesEquipe(equipe2);
+    }
+
+    public static void exibirDetalhesEquipe(Equipe equipe) {
+        System.out.println("Nome da equipe: " + equipe.getNome());
+        System.out.println("Cidade da equipe: " + equipe.getCidade());
+        System.out.println("Jogadores:");
+
+        for (Jogador jogador : equipe.getJogadores()) {
+            System.out.println(" - Nome: " + jogador.getNome());
+            System.out.println(" - Posição: " + jogador.getPosicao());
+            System.out.println(" - Número da Camisa: " + jogador.getNumeroCamisa());
+        }
+    }
+}
